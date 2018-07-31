@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService} from '../../services/api.service';
 import { Log }  from '../log.interface';
+import { Category } from '../../categories/category.interface';
+
 
 
 @Component({
@@ -9,12 +11,14 @@ import { Log }  from '../log.interface';
   styleUrls: ['./logs-list.component.css']
 })
 export class LogsListComponent implements OnInit {
+  categories : Category [] = [];
   logs: Log[] = [];
   error = '';
 
   constructor(private apiService : ApiService) { }
 
   ngOnInit() {
+
     this.showAllLogs();
 
     this.apiService.logSubject
@@ -41,4 +45,5 @@ export class LogsListComponent implements OnInit {
       
       )
   }
+  
 }

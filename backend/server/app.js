@@ -39,7 +39,7 @@ app.use(cors())
 
 
 //Static path to dist
-app.use(express.static(path.join(__dirname, 'front/dist')));
+app.use(express.static(path.join(__dirname, '/dist')));
  
 
 
@@ -56,7 +56,7 @@ app.use('/user', usersRoutes);
 
 //Catch all other routes and return to the index file
 app.get('*', (req, res) =>{
-    res.sendFile(path.join(__dirname, 'front/dist/index.html'));
+    res.sendFile(path.join(__dirname, '/dist/index.html'));
  })
 
 // HANDLING ERRORS

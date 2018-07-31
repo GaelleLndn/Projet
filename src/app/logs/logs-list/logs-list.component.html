@@ -10,6 +10,13 @@
           </mat-card>
       </li> <!-- async permet de s'abonner à un observable et de se desabonner automatiquement-->
 
+      <li *ngFor="let cat of categories "> 
+        <mat-card style="margin: 30px" ><!---->
+         
+            {{ cat.label }}
+        
+        </mat-card>
+    </li> 
   </ul>
 
 

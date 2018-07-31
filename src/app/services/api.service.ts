@@ -62,8 +62,12 @@ public deleteCategoryById(categoryId: any){
     )
   };
 
-  public addLog(logData){
-    return this.logSubject.next(logData)
+  public createLog(logData){
+    console.log('********', logData)
+    return this.http.post(`${this.API_URL}/logs`, logData).pipe(
+      map( (data:any) => data.logs)
+    )
+    
   }
 
 }
