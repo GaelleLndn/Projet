@@ -23,7 +23,7 @@ export class LogAddFormComponent implements OnInit {
     this.showAllCategories();
 
     this.myForm = this.formBuilder.group({
-      id: [''],
+      _id: [''],
       date: [ this.today , Validators.required],
       title: ['', Validators.required],
       category: ['', Validators.required ]
@@ -47,7 +47,11 @@ export class LogAddFormComponent implements OnInit {
 
   createLog(logData){
     console.log('ajoute un log')
-    this.apiService.createLog(logData).subscribe()
+    this.apiService.createLog(logData).subscribe();
+    this.myForm.reset();
   }
+
+
+
 
 }

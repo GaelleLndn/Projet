@@ -63,11 +63,17 @@ public deleteCategoryById(categoryId: any){
   };
 
   public createLog(logData){
-    console.log('********', logData)
     return this.http.post(`${this.API_URL}/logs`, logData).pipe(
       map( (data:any) => data.logs)
-    )
-    
+    )    
   }
+
+  public getLogById(id){
+    console.log ('dans api/getLogByID')
+    return this.http.get(`${this.API_URL}/logs/${id}`).pipe(
+      map( (data:any) => data.log)
+    )    
+  }
+
 
 }
