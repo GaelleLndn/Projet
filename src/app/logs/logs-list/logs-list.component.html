@@ -1,0 +1,15 @@
+<ul *ngIf="logs">
+
+      <li *ngFor="let log of logs "> 
+          <mat-card style="margin: 30px" ><!---->
+            {{ log.title }}
+            <div *ngFor="let category of log.category ">
+              {{ category.label }}
+            </div>
+            {{ log.date }}
+          </mat-card>
+      </li> <!-- async permet de s'abonner à un observable et de se desabonner automatiquement-->
+
+  </ul>
+
+

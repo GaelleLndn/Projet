@@ -1,0 +1,22 @@
+<mat-card style="margin: 30px">
+    <form [formGroup]="myForm" (ngSubmit) ="createLog(myForm.value)">
+        <mat-form-field>
+            <input matInput [matDatepicker]="myDate" type="text" formControlName="date" placeholder="Date">
+            <mat-datepicker-toggle matSuffix [for]="myDate"></mat-datepicker-toggle>
+            <mat-datepicker #myDate></mat-datepicker>
+        </mat-form-field><br>
+  
+        <mat-form-field>
+          <mat-select placeholder="categories" formControlName="category" multiple>
+            <mat-option *ngFor="let cat of cats$" [value]="cat.id">{{ cat.label }}</mat-option>
+          </mat-select>      
+        </mat-form-field><br>
+  
+        <mat-form-field>
+          <textarea matInput formControlName="log" cols="30" rows="1" placeholder="Évènement"></textarea><br>
+        </mat-form-field><br>
+      
+      <button mat-raised-button color="primary">Ajouter</button>
+    </form>
+  </mat-card>
+  
